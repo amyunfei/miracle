@@ -1,0 +1,9 @@
+@import '@/styles/mixins.scss';
+@include b(page) {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $primary-bg;
+  font-size: 44px;
+  font-weight: 600;
+  box-shadow: 10px 10px 500px #000000 inset;
+}

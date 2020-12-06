@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom'
 import 'normalize.css'
 import './index.css'
 
+// store
+import store from './store'
+import { Provider } from 'react-redux'
+
 // index page
 import Index from './views/index'
 
@@ -12,7 +16,9 @@ import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Index />
+    <Provider store={store}>
+      <Index />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )

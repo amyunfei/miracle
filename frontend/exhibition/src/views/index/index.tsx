@@ -1,4 +1,5 @@
 import React, { Dispatch, useState } from 'react'
+import { Link } from 'react-router-dom'
 import style from './index.module.scss'
 import classnames from 'classnames/bind'
 import { connect } from 'react-redux'
@@ -19,7 +20,7 @@ const Index: React.FC<Props> = props => {
   const [menuList, setMenuList] = useState<MenuItem[]>([
     {
       name: 'animation',
-      path: '/index',
+      path: '/animation',
       icon: 'mr-icon-animation',
       active: false
     },
@@ -59,7 +60,7 @@ const Index: React.FC<Props> = props => {
       <div className={cx('mr-page__grid')}>
         {
           menuList.map((item, index) => (
-            <div key={ item.path } className={cx('mr-page__grid--item')}>
+            <Link key={ item.path } to={ item.path } className={cx('mr-page__grid--item')}>
               <div className={cx({
                 'mr-menu-icon': true,
                 'active': item.active
@@ -69,7 +70,7 @@ const Index: React.FC<Props> = props => {
                 </svg>
               </div>
               <span className={cx('mr-menu-title')}>{ item.name.toUpperCase() }</span>
-            </div>
+            </Link>
           ))
         }
       </div>

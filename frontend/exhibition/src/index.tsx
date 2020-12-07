@@ -9,7 +9,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 
 // index page
-import Index from './views/index'
+import Router from '@/router'
 
 // 性能检查
 import reportWebVitals from './reportWebVitals'
@@ -17,7 +17,7 @@ import reportWebVitals from './reportWebVitals'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Index />
+      <Router />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -5,6 +5,7 @@ import classnames from 'classnames/bind'
 import { connect } from 'react-redux'
 import { All, INCREMENT_NUMBER, DECREMENT_NUMBER } from '@/store/actions/count'
 const cx = classnames.bind(style)
+import Spotlight from '@/components/Spotlight'
 interface Props {
   DECREMENT_NUMBER: any
 }
@@ -57,22 +58,27 @@ const Index: React.FC<Props> = props => {
   }
   return (
     <div className={cx('mr-page')}>
-      <div className={cx('mr-page__grid')}>
-        {
-          menuList.map((item, index) => (
-            <Link key={ item.path } to={ item.path } className={cx('mr-page__grid--item')}>
-              <div className={cx({
-                'mr-menu-icon': true,
-                'active': item.active
-              })} onClick={() => handleRoute(index)}>
-                <svg className={cx('mr-icon')} aria-hidden="true">
-                  <use href={`#${item.icon}`} />
-                </svg>
-              </div>
-              <span className={cx('mr-menu-title')}>{ item.name.toUpperCase() }</span>
-            </Link>
-          ))
-        }
+      <div className={cx('mr-page__nav')}>
+        <div className={cx('mr-page__nav--title')}>
+          <Spotlight text='MIRACLE' />
+        </div>
+        <div className={cx('mr-page__grid')}>
+          {
+            menuList.map((item, index) => (
+              <Link key={ item.path } to={ item.path } className={cx('mr-page__grid--item')}>
+                <div className={cx({
+                  'mr-menu-icon': true,
+                  'active': item.active
+                })} onClick={() => handleRoute(index)}>
+                  <svg className={cx('mr-icon')} aria-hidden="true">
+                    <use href={`#${item.icon}`} />
+                  </svg>
+                </div>
+                {/* <span className={cx('mr-menu-title')}>{ item.name.toUpperCase() }</span> */}
+              </Link>
+            ))
+          }
+        </div>
       </div>
     </div>
   )

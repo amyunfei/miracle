@@ -3,41 +3,47 @@
   min-height: 100vh;
   width: 100%;
   background-color: $primary-bg;
-  box-shadow: 10px 10px 500px #919191 inset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include e(grid) {
+  @include e(nav) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    width: 700px;
-    height: 600px;
+    background-image: linear-gradient(to right, #000000, #b1b1b1);
+    padding: 10px 25px;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #FF0000 0%, #FF7F00 17%, #FFFF00 34%, #00FF00 51%, #00FFFF 67%, #0000FF 83%, #8B00FF 100%) 30 30;
+    @include m(title) {
+      font-size: 34px;
+      letter-spacing: 3px;
+      font-weight: 900;
+    }
+  }
+  @include e(grid) {
+    display: flex;
+    align-items: center;
     @include m(item) {
-      width: 150px;
+      width: 100px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
       .mr-menu-icon {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 20px;
-        box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.2),
-                    -18px -18px 30px rgb(45, 180, 158);
+        border-radius: 10px;
+        box-shadow: 14px 14px 20px rgba(0, 0, 0, 0.2),
+                    -18px -18px 30px rgb(97, 97, 97);
         transition: all 0.2s ease-out;
         &.active {
           animation: active 1s ease-out;
         }
         .mr-icon {
-          height: 60px;
-          width: 60px;
+          height: 40px;
+          width: 40px;
         }
       }
       .mr-menu-title {
@@ -47,12 +53,12 @@
       &:hover {
         .mr-menu-icon {
           box-shadow: 0 0 0 rgba(0, 0, 0, 0.2),
-                    0 0 0 rgba(45, 180, 158, 0.8),
+                    0 0 0 rgba(66, 66, 66, 0.8),
                     inset 18px 18px 30px rgba(0, 0, 0, 0.2),
-                    inset -18px -18px 30px rgba(45, 180, 158, 1);
+                    inset -18px -18px 30px rgba(66, 66, 66, 1);
           .mr-icon {
-            width: 56px;
-            height: 56px;
+            width: 34px;
+            height: 34px;
           }
         }
       }

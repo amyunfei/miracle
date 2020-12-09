@@ -1,0 +1,40 @@
+@import '@/styles/mixins.scss';
+@include b(comp-spotlight) {
+  font-family: Helvetica, sans-serif;
+  color: #333333;
+  position: relative;
+  height: 100%;
+
+  &::after {
+    content: attr(data-text);
+    color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../../assets/images/gradienta.jpg);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    clip-path: ellipse(20%  50% at 0% 50%);
+    -webkit-clip-path: ellipse(20%  50% at 0% 50%);
+    animation: spotLight 5s infinite;
+  }
+}
+
+@keyframes spotLight {
+  0% {
+    clip-path: ellipse(20%  50% at 0% 50%);
+    -webkit-clip-path: ellipse(20%  50% at 0% 50%);
+  }
+
+  50% {
+    clip-path: ellipse(20%  50% at 100% 50%);
+    -webkit-clip-path: ellipse(20%  50% at 100% 50%);
+  }
+
+  100% {
+    clip-path: ellipse(20%  50% at 0% 50%);
+    -webkit-clip-path: ellipse(20%  50% at 0% 50%);
+  }
+}

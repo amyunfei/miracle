@@ -1,5 +1,6 @@
 import React, { Dispatch, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Router from '@/router'
 import style from './index.module.scss'
 import classnames from 'classnames/bind'
 import { connect } from 'react-redux'
@@ -27,19 +28,19 @@ const Index: React.FC<Props> = props => {
     },
     {
       name: 'svg',
-      path: '/index2',
+      path: '/svg',
       icon: 'mr-icon-draw',
       active: false
     },
     {
       name: 'admin',
-      path: '/index3',
+      path: '/admin',
       icon: 'mr-icon-pc',
       active: false
     },
     {
       name: 'blog',
-      path: '/index4',
+      path: '/blog',
       icon: 'mr-icon-blog',
       active: false
     }
@@ -79,6 +80,9 @@ const Index: React.FC<Props> = props => {
             ))
           }
         </div>
+      </div>
+      <div className={cx('mr-page__main')}>
+        <Router />
       </div>
     </div>
   )

@@ -4,13 +4,19 @@
   width: 100%;
   background-color: $primary-bg;
   @include e(nav) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-image: linear-gradient(to right, #000000, #b1b1b1);
-    padding: 10px 25px;
+    background-image: linear-gradient(to right, #222020, #636363);
+    height: 80px;
+    padding: 0 25px;
     border-bottom: 2px solid;
     border-image: linear-gradient(to right, #FF0000 0%, #FF7F00 17%, #FFFF00 34%, #00FF00 51%, #00FFFF 67%, #0000FF 83%, #8B00FF 100%) 30 30;
+    box-sizing: border-box;
     @include m(title) {
       font-size: 34px;
       letter-spacing: 3px;
@@ -69,6 +75,11 @@
       // }
       
     }
+  }
+  @include e(main) {
+    padding-top: 80px;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 

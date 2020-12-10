@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 // reset css
 import 'normalize.css'
 import './index.css'
@@ -9,7 +10,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 
 // index page
-import Router from '@/router'
+import Index from '@/views/index'
 
 // 性能检查
 import reportWebVitals from './reportWebVitals'
@@ -17,7 +18,9 @@ import reportWebVitals from './reportWebVitals'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router />
+      <BrowserRouter>
+        <Index />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

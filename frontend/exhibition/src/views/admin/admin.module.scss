@@ -1,0 +1,7 @@
+@import '@/styles/mixins.scss';
+
+@include b(admin-index) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
